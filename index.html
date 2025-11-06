@@ -93,25 +93,55 @@
         <p class="beta-subtext">
           Sign up below to get early access and help us test eventBoost this semester.
         </p>
-        <div class="beta-embed">
-          <iframe
-            title="EventBoost Beta signup form"
-            src="https://forms.office.com/r/5urWV3f88x?embed=true"
-            width="640"
-            height="480"
-            frameborder="0"
-            marginwidth="0"
-            marginheight="0"
-            allowfullscreen
-            webkitallowfullscreen
-            mozallowfullscreen
-            msallowfullscreen
-          ></iframe>
-          <p class="embed-fallback">
-            Trouble with the embedded form?
-            <a href="https://forms.office.com/r/5urWV3f88x" target="_blank" rel="noopener">Open it in a new tab.</a>
-          </p>
-        </div>
+        <form id="beta-form" class="beta-form">
+          <h3>Request Beta Access</h3>
+          <label>
+            Full Name
+            <input type="text" name="name" placeholder="Alex Rivera" aria-label="Full Name" required />
+          </label>
+          <label>
+            Club or Organization Name
+            <input
+              type="text"
+              name="club"
+              placeholder="Babson Entrepreneurship Club"
+              aria-label="Club or Organization Name"
+              required
+            />
+          </label>
+          <label>
+            School / Campus
+            <input type="text" name="school" placeholder="Babson College" aria-label="School or Campus" required />
+          </label>
+          <label>
+            Email Address
+            <input type="email" name="email" placeholder="you@babson.edu" aria-label="Email Address" required />
+          </label>
+          <label>
+            Estimated # of events per semester
+            <select name="events_per_semester" aria-label="Estimated number of events per semester">
+              <option value="" selected disabled>Select one</option>
+              <option value="1-5">1-5</option>
+              <option value="5-10">5-10</option>
+              <option value="10+">10+</option>
+            </select>
+          </label>
+          <label>
+            Why you’re interested in trying EventBoost
+            <textarea
+              name="why"
+              rows="3"
+              placeholder="Tell us what challenges EventBoost can solve for your club."
+              aria-label="Why you’re interested in trying EventBoost"
+            ></textarea>
+          </label>
+          <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;" />
+          <button type="submit" class="btn btn-primary">
+            <span class="button-label">💌 Sign Up for Early Access</span>
+            <span class="button-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+        <div id="msg" style="margin-top: 8px;" role="status" aria-live="polite"></div>
       </section>
     </main>
 
@@ -126,6 +156,52 @@
       const yearEl = document.getElementById("year");
       if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
+      }
+
+      const form = document.getElementById("beta-form");
+      const msg = document.getElementById("msg");
+
+      if (form && msg) {
+        const submitButton = form.querySelector("button[type='submit']");
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (!form.reportValidity()) {
+            return;
+          }
+
+          const formData = new FormData(form);
+
+          // Honeypot check
+          if (formData.get("website")) {
+            return;
+          }
+
+          const data = Object.fromEntries(formData.entries());
+
+          msg.textContent = "Submitting…";
+          submitButton?.setAttribute("disabled", "true");
+
+          try {
+            const response = await fetch("https://hook.us2.make.com/1qg981e2xtff7sygin2ek6ll394kcal9", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+              msg.textContent = "✅ Thanks! We’ll be in touch soon.";
+              form.reset();
+            } else {
+              msg.textContent = "⚠️ Something went wrong. Please try again.";
+            }
+          } catch (error) {
+            msg.textContent = "⚠️ Network error. Please try again.";
+          } finally {
+            submitButton?.removeAttribute("disabled");
+          }
+        });
       }
     </script>
   </body>

@@ -1,0 +1,43 @@
+<svg width="440" height="300" viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6B4EFF"/>
+      <stop offset="100%" stop-color="#9F79FF"/>
+    </linearGradient>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F4F3FF"/>
+      <stop offset="100%" stop-color="#E7F5FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="rgba(15,23,42,0.18)"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="440" height="300" rx="28" fill="url(#bgGradient)"/>
+  <g filter="url(#shadow)">
+    <rect x="36" y="48" width="175" height="210" rx="22" fill="#FFFFFF"/>
+    <text x="56" y="92" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="18" fill="#6B4EFF">Engage</text>
+    <rect x="56" y="110" width="135" height="12" rx="6" fill="#E6E2FF"/>
+    <rect x="56" y="134" width="115" height="12" rx="6" fill="#DDD9FF"/>
+    <rect x="56" y="158" width="125" height="12" rx="6" fill="#D0CBFF"/>
+    <circle cx="132" cy="210" r="26" fill="#E6E2FF"/>
+    <text x="118" y="216" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="18" fill="#6B4EFF">AI</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="230" y="36" width="174" height="108" rx="20" fill="#FFFFFF"/>
+    <text x="252" y="80" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="18" fill="#6B4EFF">Instagram</text>
+    <rect x="252" y="96" width="134" height="10" rx="5" fill="#FFDDEE"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="248" y="158" width="156" height="88" rx="18" fill="#FFFFFF"/>
+    <text x="270" y="196" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="18" fill="#6B4EFF">Email</text>
+    <rect x="270" y="210" width="116" height="10" rx="5" fill="#CCE0FF"/>
+  </g>
+  <path d="M215 122 L230 122" stroke="#6B4EFF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M215 198 L240 198" stroke="#6B4EFF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="224" cy="122" r="4" fill="#6B4EFF"/>
+  <circle cx="228" cy="198" r="4" fill="#6B4EFF"/>
+  <g>
+    <rect x="80" y="40" width="36" height="36" rx="12" fill="url(#cardGradient)"/>
+    <text x="88" y="64" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="18" fill="#FFFFFF">🎓</text>
+  </g>
+</svg>

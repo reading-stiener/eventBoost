@@ -1,0 +1,38 @@
+<svg width="560" height="200" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pillGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6B4EFF"/>
+      <stop offset="100%" stop-color="#8F6BFF"/>
+    </linearGradient>
+    <filter id="pillShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="rgba(15,23,42,0.2)"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="560" height="200" rx="28" fill="#F7F8FF"/>
+  <g filter="url(#pillShadow)">
+    <rect x="48" y="60" width="118" height="80" rx="28" fill="#FFFFFF"/>
+    <text x="78" y="105" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#6B4EFF">Input</text>
+  </g>
+  <g filter="url(#pillShadow)">
+    <rect x="212" y="48" width="136" height="96" rx="32" fill="url(#pillGradient)"/>
+    <text x="252" y="100" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">AI</text>
+    <circle cx="248" cy="74" r="6" fill="#F3F1FF" opacity="0.65"/>
+    <circle cx="286" cy="132" r="8" fill="#F3F1FF" opacity="0.45"/>
+  </g>
+  <g filter="url(#pillShadow)">
+    <rect x="380" y="60" width="132" height="80" rx="28" fill="#FFFFFF"/>
+    <text x="412" y="95" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#6B4EFF">Posts</text>
+    <rect x="408" y="108" width="88" height="10" rx="5" fill="#E6E2FF"/>
+  </g>
+  <path d="M166 100 H200" stroke="#9F79FF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M348 100 H380" stroke="#9F79FF" stroke-width="6" stroke-linecap="round"/>
+  <g>
+    <circle cx="183" cy="100" r="9" fill="#9F79FF"/>
+    <text x="179.5" y="104" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">1</text>
+  </g>
+  <g>
+    <circle cx="364" cy="100" r="9" fill="#9F79FF"/>
+    <text x="360" y="104" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">2</text>
+  </g>
+  <text x="80" y="36" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#475569">Your event marketing workflow — simplified.</text>
+</svg>
